@@ -1,0 +1,24 @@
+{
+  "name": "discord-iron-golem",
+  "version": "0.0.1",
+  "description": "Discord bot that defends your server like an iron golem in Minecraft",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daizu-007/discord-iron-golem.git"
+  },
+  "author": "daizu-007",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/daizu-007/discord-iron-golem/issues"
+  },
+  "homepage": "https://github.com/daizu-007/discord-iron-golem#readme",
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7",
+    "toml": "^3.0.0"
+  }
+}
