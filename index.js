@@ -26,6 +26,7 @@ try {
 }
 
 const token = config.general.token;
+const log_channel_id = config.general.log_channel_id;
 const introduction_channel_id = config.verification.introduction_channel_id;
 const role_id = config.verification.role_id;
 const keyword = config.verification.keyword;
@@ -37,6 +38,8 @@ const regex_keyword = new RegExp(keyword);
 
 // ロールを保存する変数
 let role = null;
+// ログチャンネルを保存する変数
+let log_channel = null;
 
 // メッセージが送信されたときの処理
 client.on(Events.MessageCreate, async message => {
@@ -49,7 +52,8 @@ client.on(Events.MessageCreate, async message => {
         role,
         introduction_channel_id,
         dm_message_wrong,
-        dm_message_correct
+        dm_message_correct,
+        log_channel
     );
 });
 
@@ -59,7 +63,11 @@ client.once(Events.ClientReady, readyClient => {
     // ロールを取得
     const guild = readyClient.guilds.cache.first();
     role = guild.roles.cache.get(role_id);
-    if (!role) {
+    log_channel = guild.channels.cache.get(log_channel_id);
+    if (log_channel == null) {
+        console.error('ログチャンネルが見つかりません。');
+    }
+    if (role == null) {
         console.error('ロールが見つかりません。');
     }
 });
