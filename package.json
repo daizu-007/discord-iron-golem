@@ -18,7 +18,6 @@
   "homepage": "https://github.com/daizu-007/discord-iron-golem#readme",
   "dependencies": {
     "discord.js": "^14.18.0",
-    "dotenv": "^16.4.7",
     "toml": "^3.0.0"
   }
 }
