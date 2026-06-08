@@ -25,6 +25,7 @@ try {
     console.error('Configの読み込み中にエラーが発生しました:', error);
 }
 
+// TODO: 単一の変数にまとめる
 const token = config.general.token;
 const log_channel_id = config.general.log_channel_id;
 const introduction_channel_id = config.verification.introduction_channel_id;
